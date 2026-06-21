@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bharath Kumar Katikuri | Cloud Engineer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body>
+
+<!-- Navigation -->
+<nav>
+    <div class="logo">
+        ☁️ Cloud Resume
+    </div>
+
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Hero Section -->
+<header>
+
+    <h1>Bharath Kumar Katikuri</h1>
+
+    <h2 id="typing-text">
+        Aspiring Cloud Engineer | AWS | Linux | DevOps
+    </h2>
+
+    <p>
+        Building scalable cloud solutions and continuously learning automation technologies.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="resume%20(2).pdf" target="_blank" class="btn">
+            Download Resume
+        </a>
+
+        <a href="https://github.com/BharathKumar060504"
+           target="_blank"
+           class="btn">
+
+           GitHub
+        </a>
+
+        <a href="https://linkedin.com/in/bharath-kumar-katkuri"
+           target="_blank"
+           class="btn">
+
+           LinkedIn
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- About -->
+<section id="about">
+
+<h2>About Me</h2>
+
+<p>
+
+Computer Science graduate passionate about Cloud Computing and DevOps.
+Hands-on experience deploying applications on AWS and building scalable applications.
+Strong foundation in Linux, Python, and cloud infrastructure with practical experience in automation and troubleshooting.
+Actively seeking opportunities in Cloud Engineering and Infrastructure roles.
+
+</p>
+
+</section>
+
+
+
+<!-- Skills -->
+<section id="skills">
+
+<h2>Technical Skills</h2>
+
+<div class="skill-container">
+
+<div class="card">
+<h3>Cloud</h3>
+
+<ul>
+<li>AWS</li>
+<li>EC2</li>
+<li>S3</li>
+<li>IAM</li>
+<li>VPC</li>
+<li>Route53</li>
+<li>CloudWatch</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h3>Linux</h3>
+
+<ul>
+<li>Linux Administration</li>
+<li>Shell Scripting</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h3>DevOps</h3>
+
+<ul>
+<li>Docker</li>
+<li>Git</li>
+<li>GitHub</li>
+<li>Terraform</li>
+<li>Kubernetes</li>
+</ul>
+
+</div>
+
+
+<div class="card">
+
+<h3>Programming</h3>
+
+<ul>
+<li>Python</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Certifications -->
+
+<section id="certifications">
+
+    <h2>Certifications</h2>
+
+    <div class="skill-container">
+
+        <!-- AWS Certificate -->
+        <div class="cert-card">
+
+            <h3>☁️ AWS Skill Builder</h3>
+
+            <p>
+                Cloud Essentials Practitioner Training
+            </p>
+
+            <p>
+                Issued By: AWS Skill Builder
+            </p>
+
+            <a href="certificates/aws-certificate.pdf"
+               target="_blank"
+               class="btn">
+
+                View Certificate
+
+            </a>
+
+        </div>
+
+
+        <!-- Linux Certificate -->
+        <div class="cert-card">
+
+            <h3>🐧 Linux Foundation</h3>
+
+            <p>
+                Linux Training Certificate
+            </p>
+
+            <p>
+                Issued By: The Linux Foundation
+            </p>
+
+            <a href="certificates/linux-certificate.pdf"
+               target="_blank"
+               class="btn">
+
+                View Certificate
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- Projects -->
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="project-card" onclick="openModal('cloud')">
+
+<h3>Cloud Resume Challenge</h3>
+
+<p>Click to view project details</p>
+
+</div>
+
+
+<div class="project-card" onclick="openModal('cicd')">
+
+<h3>CI/CD Pipeline Project</h3>
+
+<p>Click to view project details</p>
+
+</div>
+
+</section>
+
+
+<!-- Visitor Counter -->
+
+<section>
+
+<h2>Visitors</h2>
+
+<div class="visitor-counter">
+
+👥 Visitors :
+<span id="visitor-count">
+Loading...
+</span>
+
+</div>
+
+</section>
+
+
+<!-- Contact -->
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<p>
+
+<i class="fa-solid fa-envelope"></i>
+
+katikuribharath@gmail.com
+
+</p>
+
+
+<p>
+
+<i class="fa-brands fa-github"></i>
+
+github.com/BharathKumar060504
+
+</p>
+
+
+<p>
+
+<i class="fa-brands fa-linkedin"></i>
+
+linkedin.com/in/bharath-kumar-katkuri
+
+</p>
+
+
+<p>
+
+<i class="fa-solid fa-phone"></i>
+
++91 810616****
+
+</p>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+<p>
+
+Hosted on AWS | Cloud Resume Challenge
+
+</p>
+
+</footer>
+
+
+
+<!-- Modal -->
+
+<div id="modal" class="modal">
+
+<div class="modal-content">
+
+<span class="close"
+onclick="closeModal()">
+
+&times;
+
+</span>
+
+<div id="modal-body"></div>
+
+</div>
+
+</div>
+
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
