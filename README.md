@@ -1,4 +1,4 @@
-# AWS Cloud Resume Challenge With (Zero-Cost Architecture)
+# AWS Cloud Resume Challenge
 Cloud Resume Challenge built using AWS serverless services. Features a portfolio website, visitor counter, and infrastructure automation.
 ## Architecture
 ![Architecture Diagram](architecture-diagram.png)
@@ -53,39 +53,39 @@ Created the architecture diagram for the project.
 
 ---
 
-# Step 4: Set Up FloCI
+# Step 4: Configure AWS CLI Environment Variables
 
-Started FloCI locally to simulate AWS services.
-
-### Command
-
-```bash
-floci start
-```
-
----
-
-# Step 5: Configure AWS CLI Environment Variables
-
-Configured credentials and endpoint for FloCI.
+Configure your AWS credentials
 
 ### Commands
 
-```powershell
-$env:AWS_ENDPOINT_URL="http://localhost:4566"
-$env:AWS_ACCESS_KEY_ID="test"
-$env:AWS_SECRET_ACCESS_KEY="test"
-$env:AWS_DEFAULT_REGION="us-east-1"
+## Configure AWS CLI
+
+Configure the AWS CLI by running:
+
+```bash
+aws configure
 ```
 
----
+Enter the following information when prompted:
 
-# Step 6: Create S3 Bucket
+```text
+AWS Access Key ID [None]: AKIA****************
+AWS Secret Access Key [None]: ****************************************
+Default region name [None]: us-east-1
+Default output format [None]: json
+```
 
-Created an S3 bucket to host the portfolio website.
+This configuration allows the AWS CLI to authenticate and interact with AWS services.
+
+# Step 5: Create S3 Bucket
+
+Create an S3 bucket to host the portfolio website.
 
 ### Command
 
 ```bash
-aws s3 mb s3://<bucket-name> --endpoint-url=http://localhost:4566
+aws s3 mb s3://<bucket-name>
+```
+This command creates a new S3 bucket that will be used to store the static website files.
 ```
