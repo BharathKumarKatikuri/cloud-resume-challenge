@@ -29,7 +29,7 @@ Designed and developed a responsive portfolio website using HTML, CSS, and JavaS
 
 # Step 2: Initialize Git Repository
 
-Created a local Git repository and connected it to GitHub.
+Create a local Git repository and connected it to GitHub.
 
 ### Commands Used
 
@@ -43,17 +43,7 @@ git pull origin main --allow-unrelated-histories
 git push -u origin main
 ```
 
----
-
-# Step 3: Design the Architecture
-
-Created the architecture diagram for the project.
-
-![Architecture Diagram](architecture-diagram.png)
-
----
-
-# Step 4: Configure AWS CLI Environment Variables
+# Step 3: Configure AWS CLI Environment Variables
 
 Configure your AWS credentials
 
@@ -78,7 +68,7 @@ Default output format [None]: json
 
 This configuration allows the AWS CLI to authenticate and interact with AWS services.
 
-# Step 5: Create S3 Bucket
+# Step 4: Create S3 Bucket
 
 Create an S3 bucket to host the portfolio website.
 
@@ -88,4 +78,3 @@ Create an S3 bucket to host the portfolio website.
 aws s3 mb s3://<bucket-name>
 ```
 This command creates a new S3 bucket that will be used to store the static website files.
-```
