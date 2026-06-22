@@ -150,3 +150,39 @@ Successfully hosted the portfolio website using Amazon S3.
 ![Cloud Resume Homepage](screenshots/homepage.png)
 
 ---
+
+# Step 8: Create a CloudFront Distribution
+
+Create a CloudFront distribution to improve website performance and provide HTTPS support.
+
+## Origin Domain
+
+```
+my-1st-cloud-project.s3-website.ap-south-1.amazonaws.com
+```
+
+## Origin Protocol Policy
+
+```
+HTTP Only
+```
+
+## Default Root Object
+
+```
+index.html
+```
+
+CloudFront caches content closer to users, reducing latency and improving website performance.
+
+## CloudFront URL
+
+```
+https://d1pcge31tolz8s.cloudfront.net
+```
+
+The website is now served securely over HTTPS through Amazon CloudFront.
+
+### Website Preview
+
+![CloudFront Website](screenshots/cloudfront-homepage.png)
