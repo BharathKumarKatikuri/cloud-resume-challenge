@@ -135,7 +135,7 @@ Disabled Block Public Access and attached a bucket policy to allow public read a
 
 ---
 
-# Step 7: Access Website
+# Step 8: Access Website
 
 Website Endpoint:
 
@@ -151,7 +151,7 @@ Successfully hosted the portfolio website using Amazon S3.
 
 ---
 
-# Step 8: Create a CloudFront Distribution
+# Step 9: Create a CloudFront Distribution
 
 Create a CloudFront distribution to improve website performance and provide HTTPS support.
 
@@ -187,7 +187,7 @@ The website is now served securely over HTTPS through Amazon CloudFront.
 
 ![CloudFront Website](screenshots/cloudfront-homepage.png)
 
-## Step 9: Create DynamoDB Table
+## Step 10: Create DynamoDB Table
 
 Created a DynamoDB table named `visitor-counter` to store the website visitor count.
 
@@ -197,7 +197,7 @@ Created a DynamoDB table named `visitor-counter` to store the website visitor co
 |----|----|
 | visitors | 0 |
 
-## Step 8: Create Lambda Function
+## Step 11: Create Lambda Function
 
 Created a serverless backend using AWS Lambda.
 
@@ -239,5 +239,97 @@ lambda_function.py
 
 It shows successfully invoked the function using a test event and verified that the `VisitorCount` value in DynamoDB increments correctly.
 
+
+## Step 12: Create HTTP API Using API Gateway
+
+Created an HTTP API and integrated it with the Lambda function.
+
+### Route
+
+```text
+GET /visitor
+```
+
+Example response:
+
+```json
+{
+  "count": 5
+}
+```
+
+### Step 13: Frontend Integration
+
+Updated script.js to fetch data from API Gateway.
+
+async function loadVisitorCount() {
+
+    try {
+
+        const response = await fetch(
+            "https://<api-id>.execute-api.ap-south-1.amazonaws.com/visitor"
+        );
+
+        const data = await response.json();
+
+        document.getElementById("visitor-count").innerHTML = data.count;
+
+    }
+
+    catch (error) {
+
+        document.getElementById("visitor-count").innerHTML = "Unavailable";
+
+    }
+
+}
+
+loadVisitorCount();
+
+
+### Step 13: Deploy Updated Files to Amazon S3
+
+Uploaded the modified files to the S3 bucket:
+
+aws s3 sync . s3://my-1st-cloud-project --delete
+
+
+### Step 14: Invalidate CloudFront Cache
+
+Created a CloudFront invalidation to ensure users receive the latest website content.
+
+aws cloudfront create-invalidation \
+--distribution-id <DISTRIBUTION_ID> \
+--paths "/*"
+
+## Step 13: Integrate Frontend with API Gateway
+
+Updated `script.js` to fetch the visitor count from API Gateway and display it dynamically on the website.
+
+### Screenshot
+
+![Visitor Counter Working](screenshots/visitor-counter.png)
+
+---
+
+## Step 14: Deploy Updated Files to Amazon S3
+
+Synced the local project files to the S3 bucket:
+
+```bash
+aws s3 sync . s3://my-1st-cloud-project --delete
+```
+
+This uploaded the latest changes to the production bucket.
+
+---
+
+## Step 15: Invalidate CloudFront Cache
+
+Created a CloudFront invalidation to ensure users receive the latest version of the website.
+
+```bash
+aws cloudfront create-invalidation --distribution-id <DISTRIBUTION_ID> --paths "/*"
+```
 
 
