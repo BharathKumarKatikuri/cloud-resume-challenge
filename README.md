@@ -287,22 +287,7 @@ async function loadVisitorCount() {
 loadVisitorCount();
 
 
-### Step 14: Deploy Updated Files to Amazon S3
-
-Uploaded the modified files to the S3 bucket:
-
-aws s3 sync . s3://my-1st-cloud-project --delete
-
-
-### Step 15: Invalidate CloudFront Cache
-
-Created a CloudFront invalidation to ensure users receive the latest website content.
-
-aws cloudfront create-invalidation \
---distribution-id <DISTRIBUTION_ID> \
---paths "/*"
-
-## Step 16: Integrate Frontend with API Gateway
+## Step 14: Integrate Frontend with API Gateway
 
 Updated `script.js` to fetch the visitor count from API Gateway and display it dynamically on the website.
 
@@ -312,7 +297,7 @@ Updated `script.js` to fetch the visitor count from API Gateway and display it d
 
 ---
 
-## Step 17: Deploy Updated Files to Amazon S3
+## Step 15: Deploy Updated Files to Amazon S3
 
 Synced the local project files to the S3 bucket:
 
@@ -324,7 +309,7 @@ This uploaded the latest changes to the production bucket.
 
 ---
 
-## Step 18: Invalidate CloudFront Cache
+## Step 16: Invalidate CloudFront Cache
 
 Created a CloudFront invalidation to ensure users receive the latest version of the website.
 
