@@ -108,7 +108,35 @@ window.onclick = function(event) {
 
 // Visitor Counter Placeholder
 
-document.getElementById("visitor-count").innerHTML = "Loading...";
+// Visitor Counter
+
+async function loadVisitorCount() {
+
+    try {
+
+        const response = await fetch(
+            "https://jjue8dzvij.execute-api.ap-south-1.amazonaws.com/visitor"
+        );
+
+        const data = await response.json();
+
+        document.getElementById("visitor-count").innerHTML =
+    data.count;
+
+    }
+
+    catch (error) {
+
+        console.error("Error fetching visitor count:", error);
+
+        document.getElementById("visitor-count").innerHTML =
+            "Visitors unavailable";
+
+    }
+
+}
+
+loadVisitorCount();
 
 
 // Fade-In Animation
