@@ -287,7 +287,7 @@ async function loadVisitorCount() {
 loadVisitorCount();
 
 
-## Step 14: Integrate Frontend with API Gateway
+## Step 14: Implement Dynamic Visitor Counter
 
 Updated `script.js` to fetch the visitor count from API Gateway and display it dynamically on the website.
 
