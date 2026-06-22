@@ -186,3 +186,58 @@ The website is now served securely over HTTPS through Amazon CloudFront.
 ### Website Preview
 
 ![CloudFront Website](screenshots/cloudfront-homepage.png)
+
+## Step 9: Create DynamoDB Table
+
+Created a DynamoDB table named `visitor-counter` to store the website visitor count.
+
+### Initial Item
+
+| id | VisitorCount |
+|----|----|
+| visitors | 0 |
+
+## Step 8: Create Lambda Function
+
+Created a serverless backend using AWS Lambda.
+
+### Function Details
+
+- **Function Name:** `visitor-counter-function`
+- **Runtime:** Python 3.13
+- **Permissions:** `AmazonDynamoDBFullAccess`
+
+The Lambda function increments the visitor count stored in DynamoDB and returns the updated count as a JSON response.
+
+### Core Logic
+
+```python
+response = table.update_item(
+    Key={'id': 'visitors'},
+    UpdateExpression='ADD VisitorCount :inc',
+    ExpressionAttributeValues={':inc': 1},
+    ReturnValues='UPDATED_NEW'
+)
+
+return {
+    'statusCode': 200,
+    'body': json.dumps({
+        'count': int(response['Attributes']['VisitorCount'])
+    })
+}
+```
+
+### Full Source Code
+
+See:
+
+```text
+lambda_function.py
+```
+
+### Testing
+
+It shows successfully invoked the function using a test event and verified that the `VisitorCount` value in DynamoDB increments correctly.
+
+
+
