@@ -75,6 +75,78 @@ Create an S3 bucket to host the portfolio website.
 ### Command
 
 ```bash
-aws s3 mb s3://<bucket-name>
+aws s3 mb s3://my-1st-cloud-project
 ```
 This command creates a new S3 bucket that will be used to store the static website files.
+
+# Step 5: Upload Website Files to S3
+
+Upload project files to the S3 bucket.
+
+### Command
+
+```bash
+aws s3 sync . s3://my-1st-cloud-project
+```
+
+Verify uploaded files:
+
+```bash
+aws s3 ls s3://my-1st-cloud-project
+```
+
+---
+
+# Step 6: Enable Static Website Hosting
+
+Configured the S3 bucket to serve the website.
+
+### Command
+
+```bash
+aws s3 website s3://my-1st-cloud-project --index-document index.html
+```
+
+Verify configuration:
+
+```bash
+aws s3api get-bucket-website --bucket my-1st-cloud-project
+```
+# Step 7: Make Website Public
+
+Disabled Block Public Access and attached a bucket policy to allow public read access.
+
+### Bucket Policy
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::my-1st-cloud-project/*"
+    }
+  ]
+}
+```
+
+---
+
+# Step 7: Access Website
+
+Website Endpoint:
+
+```text
+http://my-1st-cloud-project.s3-website.ap-south-1.amazonaws.com
+```
+
+Successfully hosted the portfolio website using Amazon S3.
+
+## Website Preview
+
+![Cloud Resume Homepage](screenshots/homepage.png)
+
+---
