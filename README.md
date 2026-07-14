@@ -1,7 +1,43 @@
 # AWS Cloud Resume Challenge
-Cloud Resume Challenge built using AWS serverless services. Features a portfolio website, visitor counter, and infrastructure automation.
+
+The AWS Cloud Resume Challenge is a hands-on cloud project designed to build and deploy a production-ready personal portfolio website using AWS serverless services.
+
+This project demonstrates how multiple AWS services work together to host a secure, scalable, and highly available web application while following real-world cloud deployment practices.
+
+## Problem Statement
+
+When applying for jobs, candidates usually share a PDF resume that provides limited information about their technical skills and projects. Recruiters often have only a short time to review applications, making it difficult to showcase practical experience beyond what fits on a resume.
+
+As a result, recruiters may not get a complete view of a candidate's skills, projects, certifications, and achievements.
+
+## Solution
+
+To address this, I built a cloud-hosted portfolio website that serves as a centralized platform for presenting my professional profile.
+
+The website allows recruiters and hiring managers to explore my:
+
+- Professional profile
+- Technical skills
+- Projects
+- Certifications
+- Resume
+- Contact information
+
+The project also includes a serverless visitor counter that demonstrates backend integration using AWS services.
+
+By deploying the application on AWS, the solution is secure, globally accessible, scalable, and designed using modern cloud architecture.
+
 ## Architecture
 ![Architecture Diagram](architecture-diagram.png)
+
+### Features
+
+- Resume download
+- Certificates section
+- Projects section
+- Responsive design
+
+---
 
 ## Technologies Used
 
@@ -14,18 +50,10 @@ Cloud Resume Challenge built using AWS serverless services. Features a portfolio
 - Git & GitHub
 
 ## Project Progress
+
 # Step 1: Build the Portfolio Website
 
 Designed and developed a responsive portfolio website using HTML, CSS, and JavaScript.
-
-### Features
-
-- Resume download
-- Certificates section
-- Projects section
-- Responsive design
-
----
 
 # Step 2: Initialize Git Repository
 
